@@ -20,7 +20,7 @@ const LoginForm = () => {
         const user = userCredential.user;
         localStorage.setItem('token', user.accessToken);
         localStorage.setItem('user', JSON.stringify(user));
-        navigate("/");
+        navigate("/dashboard");
     } catch (error) {
         console.error(error);
     }
