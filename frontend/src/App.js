@@ -6,9 +6,11 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import About from './components/About';
 import AboutPage from './pages/AboutPage';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (
+    <AuthProvider>
     <BrowserRouter>
     <Routes>
       <Route index element={ <Home />} />
@@ -19,6 +21,7 @@ function App() {
       <Route path="/about" element={ <AboutPage />} />
     </Routes>
     </BrowserRouter>
+    </AuthProvider>
 
   );
 }
