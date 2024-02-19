@@ -4,8 +4,9 @@ import Loginpage from './pages/Loginpage';
 import Signuppage from './pages/Signuppage';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
-import About from './components/About';
 import AboutPage from './pages/AboutPage';
+import ProjectPage from './pages/ProjectPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 //import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
       <Route path="/login" element={ <Loginpage /> } />
       <Route path="/signup" element={ <Signuppage /> } />
       <Route path="/about" element={ <AboutPage />} />
+      <Route path="/project" element={ <ProjectPage />} />
+      <Route path="/projectdetail" element={ <ProjectDetailPage />} />
     </Routes>
     </BrowserRouter>
 

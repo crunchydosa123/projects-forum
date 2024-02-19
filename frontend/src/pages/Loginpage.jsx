@@ -1,7 +1,7 @@
 import React from 'react'
 import LoginForm from '../components/LoginForm'
 import Navbar from '../components/Navbar'
-import backgroundImage from './pexels-stephan-seeber-1261728.jpg';
+import backgroundImage from '../assets/pexels-stephan-seeber-1261728.jpg';
 
 const Loginpage = () => {
   return (
