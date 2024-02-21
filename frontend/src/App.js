@@ -7,10 +7,12 @@ import Dashboard from './pages/Dashboard';
 import AboutPage from './pages/AboutPage';
 import ProjectPage from './pages/ProjectPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
+import { UserProvider } from './contexts/AuthContext';
 //import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (
+    <UserProvider>
     <BrowserRouter>
     <Routes>
       <Route index element={ <Home />} />
@@ -23,6 +25,7 @@ function App() {
       <Route path="/projectdetail" element={ <ProjectDetailPage />} />
     </Routes>
     </BrowserRouter>
+    </UserProvider>
 
   );
 }

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/solid';
 import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase-config';
 
 
 const LoginForm = () => {
+  const auth1 = auth;
   const [passVisible, setPassVisible] = useState(false);
   const [password, setPassword ] = useState('');
   const [email, setEmail] = useState('');
