@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage';
 import ProjectPage from './pages/ProjectPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import { UserProvider } from './contexts/AuthContext';
+import { PrivateRoutes } from './contexts/ProtectedRoutes';
 //import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
     <Routes>
       <Route index element={ <Home />} />
       <Route path='/home' element={ <Home />} />
-      <Route path='/dashboard' element={ <Dashboard />} />
+      <Route element={<PrivateRoutes/>}>
+        <Route path='/dashboard' element={ <Dashboard />} />
+      </Route>
       <Route path="/login" element={ <Loginpage /> } />
       <Route path="/signup" element={ <Signuppage /> } />
       <Route path="/about" element={ <AboutPage />} />
