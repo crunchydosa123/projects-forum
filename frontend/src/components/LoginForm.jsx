@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/solid';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../firebase-config';
+import { auth, signInWithGoogle } from '../firebase-config';
 
 
 const LoginForm = () => {
@@ -46,7 +46,8 @@ const LoginForm = () => {
         className='mt-2 p-2 w-full border border-gray-300 rounded' 
         placeholder='password' 
         />
-        <button type='submit' className='w-full mt-4 botder p-3 bg-red-400 rounded text-white text-bold hover:bg-red-500'>Login</button>
+        <button type='submit' className='w-full mt-4 border p-3 bg-red-400 rounded text-white text-bold hover:bg-red-500'>Login</button>
+        <button className='w-full mt-4 border p-3 bg-red-400 rounded text-white text-bold hover:bg-red-500' onClick={signInWithGoogle}>Login In With Google</button>
     </form>
     </div>
   )
