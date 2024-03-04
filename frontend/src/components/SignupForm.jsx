@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import {auth} from "../firebase-config";
+import {auth, signInWithGoogle} from "../firebase-config";
 
 
 const SignupForm = () => {
@@ -50,6 +50,7 @@ const SignupForm = () => {
         onChange={(e) => setConfPassword(e.target.value)}
         className='mt-2 p-2 w-full border border-gray-300 rounded' placeholder='confirm password' />
         <button type='submit' className='w-full text-bold mt-4 botder p-3 bg-blue-500 rounded text-white text-bold hover:bg-blue-600'>Sign me up</button>
+        <button className='w-full mt-4 border p-3 bg-red-400 rounded text-white text-bold hover:bg-red-500' onClick={signInWithGoogle}>Sign In With Google</button>
     </form>
     </div>
   )
