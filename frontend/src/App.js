@@ -9,6 +9,7 @@ import ProjectPage from './pages/ProjectPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import { UserProvider } from './contexts/AuthContext';
 import { PrivateRoutes } from './contexts/ProtectedRoutes';
+import ApiTest from './pages/APITester';
 //import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route index element={ <Home />} />
+      <Route path='/apitest' element={<ApiTest />} />
       <Route path='/home' element={ <Home />} />
       <Route element={<PrivateRoutes/>}>
         <Route path='/dashboard' element={ <Dashboard />} />
