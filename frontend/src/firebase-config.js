@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { sendPasswordResetEmail } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB2wWZXlFgf-rzw-LkRj-PLUYh9btYsv-c",
@@ -26,4 +27,10 @@ export const signInWithGoogle = () => {
   })
 };
 
+export const resetPassword = (email) => {
+  return sendPasswordResetEmail(auth, email);
+};
+
+
 export default app;
+
