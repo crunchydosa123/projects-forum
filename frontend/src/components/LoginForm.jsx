@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/solid';
 import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
-import { auth, signInWithGoogle } from '../firebase-config';
-
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth, signInWithGoogle, resetPassword } from '../firebase-config';
+import { Auth } from 'firebase/auth';
 
 const LoginForm = () => {
   const auth1 = auth;
@@ -25,7 +25,16 @@ const LoginForm = () => {
     } catch (error) {
         console.error(error);
     }
-}
+};
+
+const handleForgotPassword = async (e) => {
+  try {
+    await resetPassword(email);
+    console.log('Password reset email sent successfully!');
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   return (
     <div className='min-h-screen flex items-center justify-center'>
@@ -48,6 +57,7 @@ const LoginForm = () => {
         />
         <button type='submit' className='w-full mt-4 border p-3 bg-red-400 rounded text-white text-bold hover:bg-red-500'>Login</button>
         <button className='w-full mt-4 border p-3 bg-red-400 rounded text-white text-bold hover:bg-red-500' onClick={signInWithGoogle}>Login In With Google</button>
+        <button className='w-full mt-4 border p-3 bg-red-400 rounded text-white text-bold hover:bg-red-500' onClick={handleForgotPassword}>Forgot Password</button>
     </form>
     </div>
   )
